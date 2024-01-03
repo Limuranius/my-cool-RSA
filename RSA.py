@@ -33,10 +33,10 @@ class RSA:
 
     def encrypt(self, m: int) -> int:
         assert 0 <= m <= (self.__public.n - 1)
-        c = algorithms.pow_mod(m, self.__public.e, self.__public.n)
+        c = pow(m, self.__public.e, self.__public.n)
         return c
 
     
     def decrypt(self, c: int):
-        m = algorithms.pow_mod(c, self.__private.d, self.__private.n)
+        m = pow(c, self.__private.d, self.__private.n)
         return m
